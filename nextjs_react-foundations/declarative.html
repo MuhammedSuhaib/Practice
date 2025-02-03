@@ -1,0 +1,53 @@
+<html>
+  <body>
+    <!-- Babel vs. Node.js Explanation -->
+    <div>
+    <h2>Babel vs. Node.js Explanation</h2>
+    <p><strong>What is Babel?</strong></p>
+    <p>Babel is a JavaScript compiler that converts modern JavaScript (ES6, JSX, TypeScript) into older versions of JavaScript that browsers can understand.</p>
+    
+    <p><strong>What is Node.js?</strong></p>
+    <p>Node.js is a JavaScript runtime that allows you to run JavaScript outside the browser. It is built on the V8 engine.</p>
+    
+    <p><strong>Babel vs. Node.js</strong></p>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Babel</th>
+        <th>Node.js</th>
+      </tr>
+      <tr>
+        <td><strong>What it does</strong></td>
+        <td>Converts modern JS to older JS</td>
+        <td>Runs JavaScript outside the browser</td>
+      </tr>
+      <tr>
+        <td><strong>Used for</strong></td>
+        <td>Transpiling JSX, ES6+</td>
+        <td>Backend development, running scripts</td>
+      </tr>
+      <tr>
+        <td><strong>Needed for React?</strong></td>
+        <td>Yes, if using JSX</td>
+        <td>Yes, for development (e.g., Next.js, npm)</td>
+      </tr>
+      <tr>
+        <td><strong>Can run JavaScript?</strong></td>
+        <td>No (only transforms it)</td>
+        <td>Yes</td>
+      </tr>
+    </table>
+  </div>
+    <div id="reactID"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      // Get the existing div with id "reactID" from the HTML document
+      const reactID = document.getElementById('reactID');
+      // Create a React root inside the selected div
+      const root = ReactDOM.createRoot(reactID);
+      // Render the React element inside the div
+      root.render(<h1>Heading using react</h1>);
+    </script>
+  </body>

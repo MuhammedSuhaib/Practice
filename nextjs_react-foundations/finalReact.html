@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <!-- Add Tailwind CSS CDN link in the head section -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans text-gray-900">
+
+    <div id="app" class="container mx-auto p-8"></div>
+
+    <!-- Including React, ReactDOM, and Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      // Header component with some styling
+      function Header({ title }) {
+        return (
+          <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">
+            {title ? title : "Favorite Programming Language"}
+          </h1>
+        )
+      }
+
+      // Main HomePage component
+      function HomePage() {
+        // List of programming languages
+        const languages = [
+          { name: "JavaScript", likes: 0 },
+          { name: "Python", likes: 0 },
+          { name: "Java", likes: 0 },
+          { name: "Ruby", likes: 0 },
+          { name: "C++", likes: 0 }
+        ]
+
+        // State to track the updated likes for each language
+        const [updatedLanguages, setUpdatedLanguages] = React.useState(languages)
+
+        // Function to handle the like button click
+        function handleLike(languageName) {
+          const newLanguages = updatedLanguages.map((language) => {
+            if (language.name === languageName) {
+              return { ...language, likes: language.likes + 1 }
+            }
+            return language
+          })
+
+          setUpdatedLanguages(newLanguages)
+        }
+
+        return (
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <Header title="Vote for your favorite Programming Language!" />
+            
+            <ul className="space-y-4">
+              {updatedLanguages.map((language) => (
+                <li key={language.name} className="flex justify-between items-center text-lg">
+                  {/* Display language name and like button */}
+                  <span>{language.name} - <strong>{language.likes}</strong> Likes</span>
+                  <button 
+                    onClick={() => handleLike(language.name)} 
+                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">
+                    Like
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      // Render the HomePage component to the DOM
+      const root = ReactDOM.createRoot(app);
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>

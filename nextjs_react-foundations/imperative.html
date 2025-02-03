@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <div id="iidd"></div>
+    <div id="dii"></div>
+    <script type="text/javascript">
+        const iidd = document.getElementById('iidd');
+        iidd.innerHTML = 'DOM!';
+      // Get the existing element with the ID "dii" from the HTML document
+      const containerDiv = document.getElementById('dii');
+      
+      // Create a new <h1> element to display text
+      const createdHeadingElement = document.createElement('h1');
+      
+      // Define the text content that will go inside the <h1> tag
+      const headingText = 'This is "heading".';
+      
+      // Create a text node containing the heading text
+      const textNodeForHeading = document.createTextNode(headingText);
+      
+      // Append the text node to the newly created <h1> element
+      createdHeadingElement.appendChild(textNodeForHeading);
+      
+      // Append the <h1> element into the existing "dii" div
+      // This will make the heading visible on the webpage
+      containerDiv.appendChild(createdHeadingElement);
+    </script>
+  </body>
+</html>

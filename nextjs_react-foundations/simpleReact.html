@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next.js/React Chapter 5</title>
+  <!-- Include React and ReactDOM from CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- React will render inside this div -->
+  <div id="app"></div>
+
+  <script type="text/babel">
+    // Define a new React component called "SimpleReactComponent"
+    function SimpleReactComponent() {
+      return (
+        <div>
+          <h1 style={{ color:"#FF0000" }} >Simple React Component</h1>
+        </div>
+      );
+    }
+          {/* Nesting the above component in below one */}
+    function HomePage() {
+      return (
+        <div>
+          {/* Nesting the SimpleReactComponent component */}
+          <select style={{ width: '100%', padding: '10px', fontSize: '16px' }}>
+            <option value="easypaisa">EasyPaisa (In Development)</option>
+            <option value="jazzcash">      <SimpleReactComponent />
+            </option>
+            <option value="cashondelivery">Cash on Delivery</option>
+          </select>
+        </div>
+      );
+    }
+    // yahan p nextjs ki trhn function ko export/export default nhi krna hota h Q k export kr k import khan kren gy 1 hi file h tu react root p render krty hn yahan
+    // Get the existing div with id "app"
+    const appContainer = document.getElementById('app');
+
+    // Create a React root
+    const root = ReactDOM.createRoot(appContainer);
+
+    // Render the SimpleReactComponent inside the app container
+    root.render(<HomePage />);
+  </script>
+</body>
+
+</html>
