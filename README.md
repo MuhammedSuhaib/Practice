@@ -1,4 +1,4 @@
-###### Ue Ctrl+Shift+V to open the markdown preview.
+###### Ue Ctrl+Shift+V to open the markdown preview
 
 # Python vs TypeScript/JavaScript: A Beginner-Friendly Comparison
 
@@ -90,6 +90,7 @@ const unique = new Set([1, 2, 3]); // Set
 ---
 
 **Set in Python**  
+
 - `set`: `{}` — removes duplicates (list `[]` doesn't).
 - **Set** is used to create a **unique list**.
 - `{}` alone is an **empty dict**, **not** an empty set.  
@@ -158,15 +159,19 @@ if (x > 10) {
   console.log("Small");
 }
 ```
+
 ## 11. Type Casting
+
 ---
 
 **What is Type Casting?**  
 Type casting (or type conversion) is changing one data type into another. Python has two types:
+
 - **Implicit Type Casting**: Python does it automatically.
 - **Explicit Type Casting**: You do it manually using built-in functions.
 
 Example:  
+
 ```python
 lst: list = [("name", "Alice"), ("age", 25)]
 # or
@@ -178,10 +183,10 @@ print(d, type(d))
 ```
 
 **Note:**  
+
 - `complex` numbers can **only** be converted to `str`, **not** to `int` or `float`.
 
 ---
-
 
 ## 12. Error Handling
 
@@ -209,7 +214,7 @@ user_name = "xyz"
 print(user_name)
 ```
 
-### Comparison with JavaScript/TypeScript:
+### Comparison with JavaScript/TypeScript
 
 ```ts
 console.log("Hello World!!");
@@ -221,7 +226,7 @@ userName = "xyz";
 console.log(userName);
 ```
 
-- Python uses ` print()` for output, whereas JavaScript/TypeScript uses `console.log()`.
+- Python uses `print()` for output, whereas JavaScript/TypeScript uses `console.log()`.
 - Variables in Python are dynamically typed, while TypeScript requires explicit types.
 
 ---
@@ -243,7 +248,7 @@ print("This is a very long statement that will be split "
 
 ```
 
-### Comparison with JavaScript/TypeScript:
+### Comparison with JavaScript/TypeScript
 
 ```ts
 // Use backslash (\) to continue a line.
@@ -273,7 +278,7 @@ last_name = "Khan"
 full_name = f"{first_name} {last_name}"
 ```
 
-### Comparison with JavaScript/TypeScript:
+### Comparison with JavaScript/TypeScript
 
 ```ts
 let firstName = "Fahad";
@@ -291,7 +296,7 @@ let fullName = `${firstName} ${lastName}`; // Template literals
 greeting = "Hello, {}!".format(first_name)
 ```
 
-### Comparison with JavaScript/TypeScript:
+### Comparison with JavaScript/TypeScript
 
 - Not available in JavaScript/TypeScript
 
@@ -302,6 +307,7 @@ greeting = "Hello, {}!".format(first_name)
 ```python
 greeting = "Hello, %s!" % first_name
 ```
+
 **Another example using `%` operator:**
 
 ```python
@@ -313,6 +319,7 @@ my_weight: float = 70.532000  # 70.536000
 my_string: str = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight is %2f Kg.''' % (name, first_letter, age, my_weight)
 print(my_string)
 ```
+
 - `%s` → string
 - `%d` → integer
 - `%f` → float
@@ -325,7 +332,7 @@ print(my_string)
 - `%c` → character (based on integer value)
 - `%p` → pointer address
 
-### Comparison with JavaScript/TypeScript:
+### Comparison with JavaScript/TypeScript
 
 - Not available in JavaScript/TypeScript
 
@@ -337,7 +344,7 @@ print(my_string)
 greeting = "Hello, " + first_name + "!"
 ```
 
-### Comparison with JavaScript/TypeScript:
+### Comparison with JavaScript/TypeScript
 
 ```ts
 let greeting = "Hello, " + firstName + "!";
@@ -354,7 +361,7 @@ arr = ["Hello, ", "Fahad", "!"]
 greeting = "".join(arr)
 ```
 
-### Comparison with JavaScript/TypeScript:
+### Comparison with JavaScript/TypeScript
 
 ```ts
 let arr = ["Hello, ", "Fahad", "!"];
@@ -528,20 +535,20 @@ txt = "We have {:<8} chickens."
 print(txt.format(49)) # Output: "We have 49       chickens."
 ```
 
-##### Alignment Options:
+##### Alignment Options
 
 - `:<` Left aligns.
 - `:>` Right aligns.
 - `:^` Centers.
 
-##### Sign Handling:
+##### Sign Handling
 
 - `:=` Places the sign at the left.
 - `:+` Adds a plus sign for positive values.
 - `:-` Adds a minus sign only for negative values.
 - `:` Adds space before positive numbers.
 
-##### Number Formatting:
+##### Number Formatting
 
 - `:,` Comma separator for thousands.
 - `:_` Underscore separator for thousands.
@@ -591,7 +598,7 @@ text = "abc abc"
 print(text.translate(trans))  # Output: "123 123"
 ```
 
-##### Advanced Usage:
+##### Advanced Usage
 
 ```python
 trans = str.maketrans({"a": "1", "b": "2", "c": "3"})
@@ -622,55 +629,55 @@ text = "abc"
 print(text.translate(trans))  # Output: "123"
 ```
 
-### **`encode()`**: Encodes the string.
+### **`encode()`**: Encodes the string
 
-### **`endswith(suffix)`**: Checks if string ends with the given suffix.
+### **`endswith(suffix)`**: Checks if string ends with the given suffix
 
-### **`expandtabs(tabsize)`**: Sets tab size.
+### **`expandtabs(tabsize)`**: Sets tab size
 
-### **`format_map()`**: Formats specified values in the string.
+### **`format_map()`**: Formats specified values in the string
 
-### **`index(substring)`**: Returns the position of the substring.
+### **`index(substring)`**: Returns the position of the substring
 
-### **`join(iterable)`**: Joins elements of an iterable with the string.
+### **`join(iterable)`**: Joins elements of an iterable with the string
 
-### **`partition(separator)`**: Partitions the string into a tuple of three parts.
+### **`partition(separator)`**: Partitions the string into a tuple of three parts
 
-### **`rfind(substring)`**: Finds the last occurrence of the substring.
+### **`rfind(substring)`**: Finds the last occurrence of the substring
 
-### **`rindex(substring)`**: Finds the last occurrence of the substring and returns its index.
+### **`rindex(substring)`**: Finds the last occurrence of the substring and returns its index
 
-### **`rjust(width, char)`**: Right-aligns the string within the specified width, pads with `char`.
+### **`rjust(width, char)`**: Right-aligns the string within the specified width, pads with `char`
 
-### **`rpartition(separator)`**: Partitions the string into three parts from the right.
+### **`rpartition(separator)`**: Partitions the string into three parts from the right
 
-### **`rsplit()`**: Splits the string at the specified separator, from the right.
+### **`rsplit()`**: Splits the string at the specified separator, from the right
 
-### **`rstrip()`**: Removes trailing whitespaces.
+### **`rstrip()`**: Removes trailing whitespaces
 
-### **`split()`**: Splits the string at the specified separator.
+### **`split()`**: Splits the string at the specified separator
 
-### **`startswith(prefix)`**: Checks if the string starts with the specified prefix.
+### **`startswith(prefix)`**: Checks if the string starts with the specified prefix
 
-### **`zfill(width)`**: Pads the string with zeros on the left to the specified width.
+### **`zfill(width)`**: Pads the string with zeros on the left to the specified width
 
-### **`isascii()`**: Checks if all characters are ASCII.
+### **`isascii()`**: Checks if all characters are ASCII
 
-### **`isdecimal()`**: Checks if all characters are decimals.
+### **`isdecimal()`**: Checks if all characters are decimals
 
-### **`isidentifier()`**: Checks if the string is a valid identifier.
+### **`isidentifier()`**: Checks if the string is a valid identifier
 
-### **`islower()`**: Checks if all characters are lowercase.
+### **`islower()`**: Checks if all characters are lowercase
 
-### **`isnumeric()`**: Checks if all characters are numeric.
+### **`isnumeric()`**: Checks if all characters are numeric
 
-### **`isprintable()`**: Checks if all characters are printable.
+### **`isprintable()`**: Checks if all characters are printable
 
-### **`isspace()`**: Checks if all characters are whitespaces.
+### **`isspace()`**: Checks if all characters are whitespaces
 
-### **`istitle()`**: Checks if the string follows title case.
+### **`istitle()`**: Checks if the string follows title case
 
-### **`isupper()`**: Checks if all characters are uppercase.
+### **`isupper()`**: Checks if all characters are uppercase
 
 ### **`len()`**
 
@@ -679,11 +686,13 @@ a = "Hello, World!"
 print(len(a))
 ```
 
-### **`in/not in`** Check if "free" is present in the following text:
+### **`in/not in`** Check if "free" is present in the following text
+
 ```py
 txt = "The best things in life are free!"
 print("free" in txt)
 ```
+
 ---
 
 ### Docstring (Multiline Comments)
@@ -703,8 +712,11 @@ Used for documentation.
 ```
 
 - Python uses `"""Triple Quotes"""`, while JavaScript/TypeScript uses `/* Block Comments */`.
+
 ---
+
 - Triple quotes (""") let you write multi-line strings, so instead of using \n to break lines, you can just write the text across lines.
+
 * ```py
   print("""
   Line 1    
@@ -712,7 +724,9 @@ Used for documentation.
   Line 3
   """)
   ```
+
     same as
+
 - ```py
   print("Line 1\nLine 2\nLine 3")
   ```
@@ -756,14 +770,20 @@ inquirer
 7. **Mapping Data Type**: `dict` (stores key-value pairs).
 8. **Adding `int` and `float`** results in a `float`.
 9. **Casting `float` to `int`** truncates (removes) the decimal part, not rounds it.
-10. **MULTIPLE ASSIGMENT**
+10. **MULTIPLE ASSIGNMENT**
+
+    ```python
     x, y, z = 1, 2.5, "Python" # Using type hints while assigning mutiple variables simultaneously cause and error invalid syntax
 
-print( z)
-print( x)
-print( y) 11. i**del**
-del x removes the variable x from memory. After deletion, trying to access the variable x results in a NameError, indicating that the variable no longer exists.
----`
+    print(z)
+    print(x)
+    print(y)
+    ```
+
+11. **del**
+    `del x` removes the variable `x` from memory. After deletion, trying to access the variable `x` results in a NameError, indicating that the variable no longer exists.
+
+---
 
 <!-- hash("Hamza")// it will give its hash code
  -->
