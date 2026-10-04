@@ -5,8 +5,7 @@
 // console.log("This is another very long statement that will be split \
 // across multiple lines to improve readability \
 // without breaking the string.")
-// // # Alternatively, you can use "" for each line to avoid using backslashes:
+// # Alternatively, you can use "" for each line to avoid using backslashes:
 // console.log("This is a very long statement that will be split ",
 // "across multiple lines to improve readability ",
 // "without breaking the string.")
-

@@ -52,3 +52,7 @@
 # x = "#".join(my)
 
 # print(x)
+name ='abcd'
+#      -4 -3 -2 -1
+#take from -4 to -3 and skip -2
+print(name[-4:-2]) 
