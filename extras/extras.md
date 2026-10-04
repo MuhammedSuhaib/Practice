@@ -1,4 +1,3 @@
-
 OpenRouter **hosts + resells** LLMs on their side, so they are saying: pay for our single API
 and pass any model in the model field, then the reply will come from their hosted LLMs, without the key of OpenAI/Gemini/Claude, etc.
 One API key → access to many providers.
