@@ -1,4 +1,6 @@
-### Updated Python Evolution Timeline
+# Python Evolution & Core Notes
+
+## 📜 Python Evolution Timeline
 
 - **1843:** **Ada Lovelace** writes the first algorithm.
 - **1950s–1960s:** Computers use **Assembly** or **FORTRAN**.
@@ -90,6 +92,7 @@ assert condition, "error message if false"
 ### Testing
 
 For testing:
+
 - Create a `test` directory.
 - `test_app.py` inside that test folder.
 - Also in function name, write `test_main()`.

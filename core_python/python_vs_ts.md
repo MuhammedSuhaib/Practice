@@ -23,7 +23,7 @@
 
 ## 2. Basic Data Types
 
-![Data Types](./public/datatype.png)
+![Data Types](../public/datatype.png)
 
 | Python 🐍                    | TypeScript/JavaScript 🟦      |
 | ---------------------------- | ----------------------------- |

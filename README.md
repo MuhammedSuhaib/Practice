@@ -14,17 +14,16 @@ A structured repository containing personal notes, guides, and reference materia
 
 - **`ecosystem/`**
   Tools, frameworks, and infrastructure surrounding Python.
-  - `fastapi.md`: Building APIs with FastAPI.
-  - `database.md`: Database integrations and concepts.
-  - `kubernetes.md`: Container orchestration and deployments.
+  - `fastapi.md`: Building APIs with FastAPI (REST, routing, async, middleware).
+  - `database.md`: Database integrations (PostgreSQL, SQLite, SQLModel, ORMs).
+  - `kubernetes.md`: Container orchestration and cloud-native deployments.
+  - `rendering_types_and_auth.md`: Notes on CSR, SSR, SSG, and FastAPI backend authentication.
 
 - **`ai/`**
   Artificial Intelligence and specialized topics.
-  - `ai_stuffs.md`: General AI notes and concepts.
+  - `ai_stuffs.md`: General AI notes, evolution, ML/DL concepts, and Agentic AI.
+  - `ai_tools_and_services.md`: Comparison of providers and tooling (OpenRouter vs LiteLLM).
   - `mcp.md`: Model Context Protocol and related AI integration logic.
-
-- **`extras/`**
-  - `extras.md`: Additional miscellaneous notes and experimental ideas.
 
 - **`public/`**
   Static assets like images and diagrams referenced in the notes.

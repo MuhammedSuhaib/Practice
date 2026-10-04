@@ -1,7 +1,7 @@
 # **Operator and Operand**
 * **Operator**: A symbol that performs an operation (e.g., +, -, *, /).
 * **Operand**: The value(s) or variable(s) that the operator works with.
-![Operator and Operand](./public/opr.jpg)
+![Operator and Operand](../public/opr.jpg)
 
 # ⚙️ Python Operators
 
