@@ -1,9 +1,8 @@
-
-In Python, "guards" usually mean:  early checks to avoid wrong execution.
+In Python, "guards" usually mean: early checks to avoid wrong execution.
 
 ---
 
-### List Properties
+## List Properties
 
 - **Ordered**: Lists are ordered, meaning that the items in the list have a specific order and can be accessed by their index.
 - **Mutable**: Lists are mutable, meaning that they can be modified after they are created.
@@ -22,20 +21,20 @@ print(fruits[-3])  # Output: apple (accessing element in reverse order)
 
 ---
 
-### Append vs Extend
+## Append vs Extend
 
 - **`append`**: Adds a single value to the list.
 - **`extend`**: Adds multiple elements to the list.
 
 ---
 
-### `pop()` vs `remove()`
+## `pop()` vs `remove()`
 
-| Feature         | `pop()`                     | `remove()`                  |
-|------------------|-----------------------------|-----------------------------|
-| **Based on**     | Index                      | Value                      |
-| **Return value** | Yes (removed item)         | No (returns `None`)        |
-| **Error if...**  | Index out of range         | Value not found            |
+| Feature          | `pop()`                                    | `remove()`                       |
+| ---------------- | ------------------------------------------ | -------------------------------- |
+| **Based on**     | Index                                      | Value                            |
+| **Return value** | Yes (removed item)                         | No (returns `None`)              |
+| **Error if...**  | Index out of range                         | Value not found                  |
 | **Default use**  | Removes the last item if no index is given | Removes the first matching value |
 
 Example:
@@ -50,7 +49,7 @@ except IndexError:
 
 ---
 
-### Removing All Occurrences of a Value
+## Removing All Occurrences of a Value
 
 You can't remove all occurrences of a value with a single `remove()` call. Use a loop or list comprehension instead.
 
@@ -76,7 +75,7 @@ lst = list(filter(lambda x: x != 1, lst))
 
 ---
 
-### Sorting Lists
+## Sorting Lists
 
 - **Ascending Order**:
 
@@ -105,7 +104,7 @@ words.sort(key=lambda word: len(word))
 
 ---
 
-### List Comprehension
+## List Comprehension
 
 List comprehension is a concise way to create new lists by applying a transformation or filter to each element.
 
@@ -258,10 +257,10 @@ gc.collect()
 
 ### Import Styles
 
-| Style                  | Bytecode Impact | Readability | Performance |
-|------------------------|-----------------|-------------|-------------|
-| `import module`        | ✅ Minimal      | ✅ Clear    | ✅ Fast     |
-| `from module import *` | ❌ Bigger       | ❌ Confusing| ❌ Slower   |
+| Style                  | Bytecode Impact | Readability  | Performance |
+| ---------------------- | --------------- | ------------ | ----------- |
+| `import module`        | ✅ Minimal      | ✅ Clear     | ✅ Fast     |
+| `from module import *` | ❌ Bigger       | ❌ Confusing | ❌ Slower   |
 
 ---
 
@@ -287,19 +286,22 @@ def my_generator():
     yield 2
     yield 3
 ```
-### Scenarios Where Exception Handling is Crucial
-File Operations: Handling missing files or permission errors during file access.
-
-User Input: Validating and handling invalid or unexpected input from users.
-
-Network Operations: Managing connection errors or timeouts in network requests.
-
-Mathematical Operations: Preventing division by zero or invalid calculations.
 
 ---
-Quick walk-through:
+
+## Exception Handling
+
+### Scenarios Where Exception Handling is Crucial
+
+- **File Operations**: Handling missing files or permission errors during file access.
+- **User Input**: Validating and handling invalid or unexpected input from users.
+- **Network Operations**: Managing connection errors or timeouts in network requests.
+- **Mathematical Operations**: Preventing division by zero or invalid calculations.
+
+---
 
 ### `try`, `except`, `else`, `finally`
+
 - `try`: Code that might throw an error.
 - `except`: Runs if an error happens in `try`.
 - `else`: Runs if no error in `try`.
@@ -312,18 +314,21 @@ except ZeroDivisionError:
     print("Error!")
 except Exception:  # Catches anything not caught above
     print("An unexpected error occurred.")
-else: #optional runs if no error in try block
+else:  # Optional: runs if no error in try block
     print("No error")
-finally: #optional always runs
+finally:  # Optional: always runs
     print("Always runs")
 ```
+
 ---
-cheatsheet for common exceptions:
+
+### Common Exceptions Cheatsheet
 
 ```python
 # Common exceptions
 try:
     # risky code
+    pass
 except TypeError:
     print("Wrong type! Check your data.")
 except ValueError:
@@ -349,7 +354,7 @@ except PermissionError:
 except Exception:
     print("Something went wrong.")
 
-#You create a new custom error by creating  classes for example (NegativeNumberError) that inherits from the base Exception class.like
+# Custom exception example (NegativeNumberError) inheriting from base Exception class
 class NegativeNumberError(Exception):
     """Custom exception for negative numbers"""
     pass
@@ -362,22 +367,27 @@ def check_positive(n):
 try:
     print(check_positive(-5))  # Raises NegativeNumberError
 except NegativeNumberError as e:
-    print(f"Custom Exception Caught: {e}", " - Exception Class Type: ", type(e))  # Output: Custom Exception Caught: Negative numbers are not allowed!
-
+    print(
+        f"Custom Exception Caught: {e}",
+        " - Exception Class Type: ",
+        type(e)
+    )
 ```
----
+
 ---
 
 ### `raise`
+
 - Manually throw an error.
-raise will stop the current flow of execution and look for an except block to handle the exception. If no except block catches the raised exception, the program will crash (terminate).
+  `raise` will stop the current flow of execution and look for an `except` block to handle the exception. If no `except` block catches the raised exception, the program will crash (terminate).
 
 ```python
 raise ValueError("Invalid value")
 ```
+
 You can use `raise` without a custom message by just raising the exception class itself:
 
-### Example:
+#### Example
 
 ```python
 raise ValueError  # Will raise a default ValueError
@@ -385,11 +395,11 @@ raise ValueError  # Will raise a default ValueError
 
 This will trigger the `ValueError` exception without any custom message. If uncaught, it will display something like:
 
-```
+```text
 ValueError
 ```
 
-### Re-raising an existing exception without a custom message:
+#### Re-raising an existing exception without a custom message
 
 ```python
 try:
@@ -400,15 +410,17 @@ except ValueError:
 ```
 
 This will re-raise the same `ValueError` and propagate it up the stack.
+
 ---
-## Equivalent of throw and throws in Python
-In Java, throw and throws are used for exception handling. Python doesn’t have a direct equivalent to throws, but throw is equivalent to Python's raise.
 
+## Equivalent of `throw` and `throws` in Python
 
+In Java, `throw` and `throws` are used for exception handling. Python doesn't have a direct equivalent to `throws`, but `throw` is equivalent to Python's `raise`.
 
-✔ Python doesn’t enforce throws, but you can document exceptions in docstrings or use type hints (NoReturn).
+✔ Python doesn't enforce `throws`, but you can document exceptions in docstrings or use type hints (`NoReturn`).
 
 ### `NoReturn` (from `typing`)
+
 - Used to mark functions that **never return** (e.g., infinite loop or always raises error).
 
 ```python
@@ -421,25 +433,25 @@ def crash() -> NoReturn:
 ---
 
 ### Alternative: `None` or omit return type
+
 - If unsure or return nothing, use `None` or omit type hint.
 
 ```python
 def log(msg: str) -> None:
     print(msg)
 
-# or just
+# Or just:
 def log(msg: str):
     print(msg)
 ```
 
-Want a TS version of any part?
-When Should You Stick to NoReturn?
-If you are using type checking tools like mypy, NoReturn is still the best choice for functions that:
+### When Should You Stick to `NoReturn`?
 
-Always raise an exception
+If you are using type checking tools like `mypy`, `NoReturn` is still the best choice for functions that:
 
-Never return (e.g., an infinite loop)
+- Always raise an exception
+- Never return (e.g., an infinite loop)
+- Terminate the program (`sys.exit()`)
 
-Terminate the program (sys.exit())
+✅ But if you are not using static type checking, omitting the type hint or using `None` may be enough.
 
-✅ But if you are not using static type checking, omitting the type hint or using None may be enough.

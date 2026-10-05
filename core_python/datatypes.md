@@ -1,14 +1,12 @@
 # Python vs TypeScript/JavaScript: A Beginner-Friendly `Data Types` Comparison
 
-![Data Types](./public/datatype.png)
+![Data Types](../public/datatype.png)
 
 ## ***STRING***
 
+| `name: str = "Ali"` | `let name: string = "Ali";` |
 
-| `name: str = "Ali"`          | `let name: string = "Ali";`|
-
-
-- #### String Interpolation
+- ### String Interpolation
 
 ```python
 first_name = "Fahad"
@@ -16,7 +14,7 @@ last_name = "Khan"
 full_name = f"{first_name} {last_name}"
 ```
 
- ***Comparison with JavaScript/TypeScript:***
+***Comparison with JavaScript/TypeScript:***
 
 ```ts
 let firstName = "Fahad";
@@ -28,7 +26,7 @@ let fullName = `${firstName} ${lastName}`; // Template literals
 
 ---
 
-- ####  String Prefixes & Formatting
+- ### String Prefixes & Formatting
 
 1. **`r""`** → **Raw String Literal**  
    Escape sequences are not processed (`\n`, `\t`, etc.).
@@ -50,31 +48,31 @@ let fullName = `${firstName} ${lastName}`; // Template literals
    - `\UXXXXXXXX` → Unicode (8-digit hex)
 
     ```python
-   txt = "Hello\rWorld!"  # Carriage return
-   print(txt)
+    txt = "Hello\rWorld!"  # Carriage return
+    print(txt)
     ```
-    \r = Carriage return. It removes previous characters after the \r and moves the cursor back to the beginning of the line, allowing overwriting.
+
+    `\r` = Carriage return. It removes previous characters after the `\r` and moves the cursor back to the beginning of the line, allowing overwriting.
     Example: Like double-select and overwrite.
 
     ```python
-   txt = "Hello \bWorld!"  # Backspace
-   print(txt)
+    txt = "Hello \bWorld!"  # Backspace
+    print(txt)
 
-   txt = "\110\145\154\154\157"  # Octal for "Hello"
-   print(txt)
+    txt = "\110\145\154\154\157"  # Octal for "Hello"
+    print(txt)
 
-   txt = "\x48\x65\x6c\x6c\x6f"  # Hex for "Hello"
-   print(txt)
+    txt = "\x48\x65\x6c\x6c\x6f"  # Hex for "Hello"
+    print(txt)
 
-   txt = "Line1\fLine2"  # Form feed
-   print(txt)
-   ```
+    txt = "Line1\fLine2"  # Form feed
+    print(txt)
+    ```
 
-
-2. **`b""` → Byte String**  
+2. **`b""`** → **Byte String**  
    Stores bytes instead of Unicode characters.
 
-3. **`f""` → Formatted String (f-string)**  
+3. **`f""`** → **Formatted String (f-string)**  
    Embed expressions using `{}`.
 
    **Example:**
@@ -92,17 +90,17 @@ let fullName = `${firstName} ${lastName}`; // Template literals
    print(greeting)
    ```
 
-4. **`u""` → Unicode String**
-    Used in Python 2; in Python 3, it’s optional as all strings are Unicode by default.
-  
----  
+4. **`u""`** → **Unicode String**  
+   Used in Python 2; in Python 3, it's optional as all strings are Unicode by default.
 
+---
 
-- #### Old-Style Formatting
+- ### Old-Style Formatting
 
 ```python
 greeting = "Hello, %s!" % first_name
 ```
+
 **Another example using `%` operator:**
 
 ```python
@@ -111,9 +109,13 @@ age: int = 20
 first_letter: str = name[0]
 my_weight: float = 70.532000  # 70.536000
 
-my_string: str = '''My name is %s, first letter of my name is \'%c\', I am %d years old and my weight is %2f Kg.''' % (name, first_letter, age, my_weight)
+my_string: str = (
+    '''My name is %s, first letter of my name is \'%c\', '''
+    '''I am %d years old and my weight is %2f Kg.'''
+) % (name, first_letter, age, my_weight)
 print(my_string)
 ```
+
 - `%s` → string
 - `%d` → integer
 - `%f` → float
@@ -126,19 +128,19 @@ print(my_string)
 - `%c` → character (based on integer value)
 - `%p` → pointer address
 
- ***Comparison with JavaScript/TypeScript:***
+***Comparison with JavaScript/TypeScript:***
 
 - Not available in JavaScript/TypeScript
 
 ---
 
-- #### String Concatenation
+- ### String Concatenation
 
 ```python
 greeting = "Hello, " + first_name + "!"
 ```
 
- ***Comparison with JavaScript/TypeScript:***
+***Comparison with JavaScript/TypeScript:***
 
 ```ts
 let greeting = "Hello, " + firstName + "!";
@@ -148,17 +150,17 @@ let greeting = "Hello, " + firstName + "!";
 
 ---
 
-- #### Joining Strings from Arrays
+- ### Joining Strings from Arrays
 
 ```python
 my = "John"
 x = "#".join(my)
 print(x)  # #J#o#h#n
 ```
-The join() method takes all items in an iterable and joins them into one string.
 
+The `join()` method takes all items in an iterable and joins them into one string.
 
- ***Comparison with JavaScript/TypeScript:***
+***Comparison with JavaScript/TypeScript:***
 
 ```ts
 let arr = ["Hello, ", "Fahad", "!"];
@@ -204,8 +206,6 @@ print(a.casefold()) # Output: "strasse"
 
 ---
 
-
-
 #### Trim Whitespace
 
 ```python
@@ -222,12 +222,15 @@ console.log(fullName.trim());
 text = "quick brown fox"
 print(text.replace("fox", "dog"))
 ```
-In python `.replace()` works globally by default.
+
+In Python `.replace()` works globally by default.
+
 ```ts
 let text = "quick brown fox";
 console.log(text.replace("fox", "dog"));
 ```
-In ts/js it replaces only the first match..
+
+In TS/JS it replaces only the first match.
 
 #### Title Case (First Letter Capitalized)
 
@@ -250,8 +253,6 @@ print(txt.capitalize())  # Output: "Hello, and welcome to my world."
 ```
 
 ---
-
-
 
 #### Swap Case (Upper to Lower & Vice Versa)
 
@@ -292,7 +293,7 @@ console.log("quick brown fox".indexOf("dog"));
 #### Count Occurrences
 
 ```python
-print("quick brown fox".count("o")) #2
+print("quick brown fox".count("o"))  # 2
 ```
 
 - **Not available in JavaScript/TypeScript (requires regex or loop)**
@@ -311,37 +312,40 @@ let name = "Hamza Ahmed Alvi";
 console.log(name.substring(0, 5)); // Hamza
 console.log(name.substring(2)); // mza Ahmed Alvi
 ```
+
 ---
 
 - **Python:** slicing syntax → `obj[start:end:step]`  
 - **JS/TS:** use `slice(start, end)` or `substring(start, end)` (no `step`)  
 
-- In `py/ts/js`, slice[] and range() never include the second argument.
-- Because the second parameter never reaches that value, to ensure it "can", instead of writing a fixed number, we can do something like 1 + 10. Now it can reach 10, even if it's a variable.
+- In `py/ts/js`, `slice[]` and `range()` never include the second argument.
+- Because the second parameter never reaches that value, to ensure it "can", instead of writing a fixed number, we can do something like `1 + 10`. Now it can reach `10`, even if it's a variable.
 - The third parameter adds that number in each iteration, like:
-  ```py
+
+  ```python
   nums = [0, 1, 2, ..., 10]
   print(nums[1:num + 1:3])  # includes index 10
 
   num = 10
   for i in range(1, 1 + num, 3):
-    print(i)  # Output: 1, 4, 7, 10
-  
+      print(i)  # Output: 1, 4, 7, 10
   ```
+
 - Use negative indexes to slice from the end of the string.
 - You can make a copy of a list by using the `:` (slice) operator.
-  ```py
+
+  ```python
   this_list = ["apple", "banana", "cherry"]
   my_list = this_list[:]
   print(my_list)  # Output: ['apple', 'banana', 'cherry']
   ```
-- The 3rd parameter as -1 will reverse the slice.
+
+- The 3rd parameter as `-1` will reverse the slice.
 - **Step** (Python only):  
-  - `2` → skip every 2nd item / n no.of items   
+  - `2` → skip every 2nd item / n no. of items
   - `-1` → reverse  
 
 Use `[::-1]` for full reverse in Python.
-
 
 #### center()
 
@@ -349,8 +353,8 @@ Use `[::-1]` for full reverse in Python.
 
 ```python
 txt = "banana"
-print(txt.center(20))     # Output: "       banana"
-print(txt.center(20, '>')) # Output: ">>>>>>>banana>>>>>>>"
+print(txt.center(20))       # Output: "       banana"
+print(txt.center(20, '>'))  # Output: ">>>>>>>banana>>>>>>>"
 ```
 
 ---
@@ -361,23 +365,23 @@ print(txt.center(20, '>')) # Output: ">>>>>>>banana>>>>>>>"
 
 ```python
 txt = "We have {:<8} chickens."
-print(txt.format(49)) # Output: "We have 49       chickens."
+print(txt.format(49))  # Output: "We have 49       chickens."
 ```
 
-###### Alignment Options:
+##### Alignment Options
 
 - `:<` Left aligns.
 - `:>` Right aligns.
 - `:^` Centers.
 
-###### Sign Handling:
+##### Sign Handling
 
 - `:=` Places the sign at the left.
 - `:+` Adds a plus sign for positive values.
 - `:-` Adds a minus sign only for negative values.
 - `:` Adds space before positive numbers.
 
-###### Number Formatting:
+##### Number Formatting
 
 - `:,` Comma separator for thousands.
 - `:_` Underscore separator for thousands.
@@ -386,7 +390,7 @@ print(txt.format(49)) # Output: "We have 49       chickens."
 - `:d` Decimal format.
 - `:e` Scientific notation (lowercase).
 - `:E` Scientific notation (uppercase).
-- `:ⁿf` Fixed-point format, where `ⁿ` is no.digits
+- `:ⁿf` Fixed-point format, where `ⁿ` is no. digits
 - `:o` Octal format.
 - `:x` Hex format (lowercase).
 - `:X` Hex format (uppercase).
@@ -427,7 +431,7 @@ text = "abc abc"
 print(text.translate(trans))  # Output: "123 123"
 ```
 
-###### Advanced Usage:
+##### Advanced Usage
 
 ```python
 trans = str.maketrans({"a": "1", "b": "2", "c": "3"})
@@ -440,7 +444,8 @@ print(text.translate(trans))  # Output: "123"
 #### splitlines()
 
 - Splits a string at line breaks and returns a list.
-- Note: `\n `breaks line when displaying, but not when processing. so we need splitlines()
+- Note: `\n` breaks line when displaying, but not when processing, so we need `splitlines()`.
+
 ```python
 txt = "Thank you for the music\nWelcome to the jungle"
 print(txt.splitlines())  # Output: ['Thank you for the music', 'Welcome to the jungle']
@@ -458,91 +463,118 @@ text = "abc"
 print(text.translate(trans))  # Output: "123"
 ```
 
-#### **`encode()`**: 
+#### **`encode()`**
+
 Encodes the string.
 
-#### **`endswith(suffix)`**: 
+#### **`endswith(suffix)`**
+
 Checks if string ends with the given suffix.
 
-#### **`expandtabs(tabsize)`**: 
+#### **`expandtabs(tabsize)`**
+
 Sets tab size.
 
-#### **`format_map()`**: 
+#### **`format_map()`**
+
 Formats specified values in the string.
 
-#### **`index(substring)`**: 
+#### **`index(substring)`**
+
 Returns the position of the substring.
 
-#### **`partition(separator)`**: 
+#### **`partition(separator)`**
+
 Partitions the string into a tuple of three parts.
 
-#### **`rfind(substring)`**: 
+#### **`rfind(substring)`**
+
 Finds the last occurrence of the substring.
 
-#### **`rindex(substring)`**: 
+#### **`rindex(substring)`**
+
 Finds the last occurrence of the substring and returns its index.
 
-#### **`rjust(width, char)`**: 
+#### **`rjust(width, char)`**
+
 Right-aligns the string within the specified width, pads with `char`.
 
-#### **`rpartition(separator)`**:
+#### **`rpartition(separator)`**
+
 Partitions the string into three parts from the right.
 
-#### **`rsplit()`**:
+#### **`rsplit()`**
+
 Splits the string at the specified separator, from the right.
 
-#### **`rstrip()`**:
+#### **`rstrip()`**
+
 Removes trailing whitespaces.
 
-#### **`split()`**:
+#### **`split()`**
+
 Splits the string at the specified separator.
 
-#### **`startswith(prefix)`**:
+#### **`startswith(prefix)`**
+
 Checks if the string starts with the specified prefix.
 
-#### **`zfill(width)`**:
+#### **`zfill(width)`**
+
 Pads the string with zeros on the left to the specified width.
 
-#### **`isascii()`**:
+#### **`isascii()`**
+
 Checks if all characters are ASCII.
 
-#### **`isdecimal()`**:
+#### **`isdecimal()`**
+
 Checks if all characters are decimals.
 
-#### **`isidentifier()`**:
+#### **`isidentifier()`**
+
 Checks if the string is a valid identifier.
 
-#### **`islower()`**:
+#### **`islower()`**
+
 Checks if all characters are lowercase.
 
-#### **`isnumeric()`**:
+#### **`isnumeric()`**
+
 Checks if all characters are numeric.
 
-#### **`isprintable()`**:
+#### **`isprintable()`**
+
 Checks if all characters are printable.
 
-#### **`isspace()`**:
+#### **`isspace()`**
+
 Checks if all characters are whitespaces.
 
-#### **`istitle()`**:
+#### **`istitle()`**
+
 Checks if the string follows title case.
 
-#### **`isupper()`**:
- Checks if all characters are uppercase.
+#### **`isupper()`**
 
-#### **`len()`**:
+Checks if all characters are uppercase.
 
-```py
+#### **`len()`**
+
+```python
 a = "Hello, World!"
 print(len(a))
 ```
 
-#### **`in/not in`** :
+#### **`in / not in`**
+
 Check if "free" is present in the following text:
-```py
+
+```python
 txt = "The best things in life are free!"
 print("free" in txt)
 ```
+
 ---
 
 #### Docstring (Multiline Comments)
@@ -562,40 +594,43 @@ Used for documentation.
 ```
 
 - Python uses `"""Triple Quotes"""`, while JavaScript/TypeScript uses `/* Block Comments */`.
+
 ---
-- Triple quotes (""") let you write multi-line strings, so instead of using \n to break lines, you can just write the text across lines.
-* ```py
+
+- Triple quotes (`"""`) let you write multi-line strings, so instead of using `\n` to break lines, you can just write the text across lines.
+
+  ```python
   print("""
   Line 1    
   Line 2
   Line 3
   """)
   ```
-    same as
-- ```py
+
+  same as
+
+  ```python
   print("Line 1\nLine 2\nLine 3")
   ```
 
 ---
 
-
 ## ***INTEGER***
 
-| `x: int = 10`                | `let x: number = 10;`|
+| `x: int = 10` | `let x: number = 10;` |
 
 ## ***FLOAT***
 
-| `y: float = 3.14`            | `let y: number = 3.14;`|
+| `y: float = 3.14` | `let y: number = 3.14;` |
 
 ## ***COMPLEX***
-
 
 ## ***LIST vs Array***
 
 Python uses **lists**, while TypeScript/JavaScript uses **arrays**.
 
 ```python
-nums: int[] = [1, 2, 3]  # List
+nums: list[int] = [1, 2, 3]  # List
 ```
 
 ```typescript
@@ -618,7 +653,7 @@ const data: readonly [number, number, number] = [4, 5, 6];
 
 ## ***RANGE***
 
-### The **third parameter** in `range(start, stop, step)` is the **step size**.
+### The **third parameter** in `range(start, stop, step)` is the **step size**
 
 - **Step** controls how much to increment or decrement the value at each iteration.
 For example, `range(2, 11, 2)` means:
@@ -629,12 +664,14 @@ For example, `range(2, 11, 2)` means:
 In this case, `range(2, 11, 2)` gives: `2, 4, 6, 8, 10`.
 
 If you change the step:
+
 - `range(1, 10, 3)` → will give `1, 4, 7` (steps of 3).
 - `range(10, 1, -1)` → will give `10, 9, 8, 7, 6, 5, 4, 3, 2` (steps of -1, counting down).
 
 So, the third parameter controls how "big" each step is in the sequence.
 
 ## ***Dictionaries vs Objects***
+
 Python uses **dict**, while TypeScript/JavaScript uses **objects or Map**.
 
 ```python
@@ -654,7 +691,9 @@ unique = {1, 2, 3}  # Set
 ```ts
 const unique = new Set([1, 2, 3]); // Set
 ```
+
 **Set in Python**  
+
 - `set`: `{}` — removes duplicates (list `[]` doesn't).
 - **Set** is used to create a **unique list**.
 - `{}` alone is an **empty dict**, **not** an empty set.  
@@ -662,12 +701,11 @@ const unique = new Set([1, 2, 3]); // Set
 - **Sets are unordered** — we can't predict the sequence.
 - **Hashing** happens on **each item**, not on the whole set.
 
-
 ## ***FROZEN SET***
 
 ## ***BOOL***
 
-| `is_true: bool = True`       | `let isTrue: boolean = true;`|
+| `is_true: bool = True` | `let isTrue: boolean = true;` |
 
 ## ***BYTE***
 
@@ -690,7 +728,7 @@ const b = Buffer.from("hello"); // Buffer
 
 ## ***NONE***
 
-| `x: None = None` (null equivalent) | `let x: null = null;`|
+| `x: None = None` (null equivalent) | `let x: null = null;` |
 
 ---
 
